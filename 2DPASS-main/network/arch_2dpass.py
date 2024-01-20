@@ -1,5 +1,5 @@
 import torch
-import torch_scatter
+# import torch_scatter
 import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
@@ -72,7 +72,8 @@ class xModalKD(nn.Module):
         lbxyz = torch.cat([labels.reshape(-1, 1), full_coors], dim=-1)
         unq_lbxyz, count = torch.unique(lbxyz, return_counts=True, dim=0)
         inv_ind = torch.unique(unq_lbxyz[:, 1:], return_inverse=True, dim=0)[1]
-        label_ind = torch_scatter.scatter_max(count, inv_ind)[1]
+        # label_ind = torch_scatter.scatter_max(count, inv_ind)[1]
+        label_ind = []
         labels = unq_lbxyz[:, 0][label_ind]
         return labels
 

@@ -36,7 +36,7 @@ class SemanticKITTIC(data.Dataset):
         origin_len = len(raw_data)
         raw_data = raw_data[:, :4]
         points = raw_data[:, :3]
-
+        print(points.shape)
         annotated_data = np.fromfile(self.im_idx[index].replace('velodyne', 'labels')[:-3] + 'label',
                                      dtype=np.uint32).reshape((-1, 1))
         instance_label = annotated_data >> 16
