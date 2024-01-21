@@ -72,7 +72,7 @@ def build_loader(config, corruption):
     # dataset_type = point_dataset
     dataset_type = get_model_class(config['dataset_params']['dataset_type'])
     val_config = config['dataset_params']['val_data_loader']
-
+    
     test_pt_dataset = pc_dataset(
         config,
         data_path=val_config['data_path'],
