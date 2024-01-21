@@ -144,7 +144,7 @@ class point_image_dataset_semkitti(data.Dataset):
 
         # load 2D data
         # image = data['img']
-        image = Image.fromarray(np.zeros(shape = (144,144,3),dtype = np.unit32))
+        image = Image.fromarray(np.zeros(shape = (144,144,3),dtype = np.uint32))
         # proj_matrix = data['proj_matrix']
         proj_matrix = np.ones(shape = (3,4),dtype = np.float32)
 
