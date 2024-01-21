@@ -351,8 +351,10 @@ class point_image_dataset_mix_semkitti(data.Dataset):
                 ref_index[drop_idx] = ref_index[0]
 
         # load 2D data
-        image = data['img']
-        proj_matrix = data['proj_matrix']
+        # image = data['img']
+        image = Image(np.zeros(shape = (144,144,3),dtype = np.uint8))
+        # proj_matrix = data['proj_matrix']
+        proj_matrix = np.ones(shape = (3,4),dtypr = np.float32)
 
         # project points into image
         keep_idx = xyz[:, 0] > 0  # only keep point in front of the vehicle
